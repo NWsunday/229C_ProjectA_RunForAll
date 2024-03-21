@@ -11,6 +11,8 @@ public class PlayerMovement : MonoBehaviour
     float horizontalInput;
     public float horizontalMultiplier = 2;
 
+    public float speedIncreasePerPoint = 0.1f;
+
     private void FixedUpdate()
     {
         if (!alive) return;
