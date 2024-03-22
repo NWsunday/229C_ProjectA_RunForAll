@@ -3,6 +3,8 @@ using UnityEngine;
 public class GroundTile : MonoBehaviour
 {
     GroundSpawner groundSpawner;
+    [SerializeField] GameObject tallObstaclePrefab;
+    [SerializeField] float tallObstacleChance = 0.2f;
     
     // Start is called before the first frame update
     private void Start()
@@ -28,12 +30,20 @@ public class GroundTile : MonoBehaviour
 
     void SpawnObstacle ()
     {
+        // Chosse which obstacle to spawn
+        GameObject obstacleToSpawn = obstaclePrefab;
+        float random = Random.Range(0f, 1f);
+        if (random < tallObstacleChance)
+        {
+            obstacleToSpawn = tallObstaclePrefab;
+        }
+
         // Choose a random point to spawn the obstacle
         int obstacleSpawnIndex = Random.Range(1, 5);
         Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
 
         // Spawn the obstace
-        Instantiate(obstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
+        Instantiate(obstacleToSpawn, spawnPoint.position, Quaternion.identity, transform);
     }
 
     public GameObject coinPrefab;
