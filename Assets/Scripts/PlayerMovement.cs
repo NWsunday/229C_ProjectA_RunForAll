@@ -44,14 +44,14 @@ public class PlayerMovement : MonoBehaviour
     {
         alive = false;
         // Restart the game
-        Invoke("Restart", 2);
-       
+        SceneManager.LoadScene("End");
+
     }
 
-    private void Restart()
+    /*private void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-    }
+    }*/
 
     void Jump()
     {
@@ -62,4 +62,13 @@ public class PlayerMovement : MonoBehaviour
         // if we are jump
         rb.AddForce(Vector3.up * jumpForce);
     }
+
+    public GameOverScreen GameOverScreen;
+
+    public void GameOver()
+    {
+        alive = false;
+        SceneManager.LoadScene("End");
+    }
+
 }

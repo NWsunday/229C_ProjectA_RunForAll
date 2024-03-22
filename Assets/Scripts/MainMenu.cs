@@ -7,6 +7,7 @@ public class MainMenu : MonoBehaviour
 {
     [SerializeField] GameObject mainPanel;
     [SerializeField] GameObject optionsPanel;
+    [SerializeField] GameObject mainMenu;
 
     public void GoToMain ()
     {
@@ -25,6 +26,12 @@ public class MainMenu : MonoBehaviour
     public void OnPlayClicked ()
     {
         SceneManager.LoadScene("SampleScene");
+    }
+
+
+    public void GoToMainMenu ()
+    {
+        SceneManager.LoadScene("MainMenu");
     }
 
     public void QuitGame ()
