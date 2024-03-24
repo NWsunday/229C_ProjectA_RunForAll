@@ -279,6 +279,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
+  GameOverScreen: {fileID: 0}
 --- !u!1 &304004343
 GameObject:
   m_ObjectHideFlags: 0
